@@ -1,7 +1,7 @@
 # Individual Project
 ## Project Description
 
-The second world war is known as the bloodiest conflict in human history. I have decided to look into the weather patterns of that time period, specifically the mean temperature. I will look into what features if any affect the MeanTemp of the dataframe.
+The second world war is known as the bloodiest conflict in human history. I have decided to look into the weather patterns of that time period, specifically the mean temperature.Studying the weather will help us to better understand what our men went through and can help us predict the weather for any future events. I will look into what features if any affect the MeanTemp of the dataframe.
 
 # Project Goal
 
