@@ -12,7 +12,7 @@ from env import user, password, host
 
 
 
-
+# remove columns that have too many missing values
 def handle_missing_values(df, prop_required_columns=0.5, prop_required_rows=0.75):
     '''This function drop rows or columns based on the percent of values that are missing,
     dropping columns before rows'''
@@ -23,6 +23,7 @@ def handle_missing_values(df, prop_required_columns=0.5, prop_required_rows=0.75
     return df
 
 
+# split the dataframe into train, validate, and test
 def train_validate_test_split(df, seed=123):
     '''
     This function takes in a dataframe, the name of the target variable
@@ -39,6 +40,7 @@ def train_validate_test_split(df, seed=123):
     return train, validate, test
 
 
+# This function removes columns that have information that is unnecessary 
 def prepare_data(df):
     '''This function imputes missing values when applicable, and drops columns with too much missing data. Finally,
     it utilizes another function to handle the missing values based on the proportion of rows and column values missing'''
