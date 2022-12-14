@@ -53,7 +53,7 @@ def model_prep(train, validate, test):
 
 
 
-
+# get the baseline for modeling
 def get_mean(train_y, validate_y):
     # We need y_train and y_validate to be dataframes to append the new columns with predicted values.
     y_train = pd.DataFrame(train_y)
@@ -73,7 +73,7 @@ def get_mean(train_y, validate_y):
       "\nValidate/Out-of-Sample: ", round(rmse_validate, 2))
     
     
-    
+# linear regression model
 def linear_regression(train_X, train_y, validate_X, validate_y):
     lm = LinearRegression(normalize=True)
     lm.fit(train_X, train_y.MeanTemp)
@@ -93,7 +93,7 @@ def linear_regression(train_X, train_y, validate_X, validate_y):
     return rmse_train, rmse_validate
 
 
-
+# lassolars model
 def lassolars(train_X, train_y, validate_X, validate_y):
     # create the model object
     lars = LassoLars(alpha=1)
@@ -119,7 +119,7 @@ def lassolars(train_X, train_y, validate_X, validate_y):
     return rmse_train, rmse_validate
 
 
-
+# polynomial model
 def polynomial(train_X, train_y, validate_X, validate_y, test_X):
     # make the polynomial features to get a new set of features
     pf = PolynomialFeatures(degree=2)
@@ -156,9 +156,7 @@ def polynomial(train_X, train_y, validate_X, validate_y, test_X):
 
 
 
-
-
-
+# lassolars model for test
 def lassolars_test(test_X, test_y):
     # create the model object
     lars = LassoLars(alpha=1)
