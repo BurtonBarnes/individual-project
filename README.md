@@ -1,17 +1,17 @@
 # Individual Project
 ## Project Description
 
-The second world war is known as the bloodiest conflict in human history. I have decided to look into the weather patterns of that time period, specifically the mean temperature.Studying the weather will help us to better understand what our men went through and can help us predict the weather for any future events. I will look into what features if any affect the MeanTemp of the dataframe.
+The second world war is known as the bloodiest conflict in human history. I have decided to look into the weather patterns of that time period, specifically the mean temperature.Studying the weather will help us to better understand what our men went through and can help us predict the weather for any future events. I will look into what features if any affect the Mean Temperature of the dataframe.
 
 # Project Goal
 
-* Discover drivers for MeanTemp in the Summary_of_Weather.csv
-* Use drivers to develop machine learning model to predict MeanTemp
-* This information will be used to further our understanding of which elements contribute to or detract from a log_error.
+* Discover drivers for Mean Temperature in the Summary_of_Weather.csv
+* Use drivers to develop machine learning model to predict Mean Temperature
+* This information will be used to further our understanding of which elements contribute to or detract from Mean Temperature
 
 # Initial Thoughts
 
-* MeanTemp will be  driven my the month of the year
+* Mean Temperature will be  driven my the month of the year
 * Precipitation will be a driver of the MeanTemp
 * Year will not affect the MeanTemp
 
@@ -43,8 +43,8 @@ The second world war is known as the bloodiest conflict in human history. I have
 |Date| The Date|
 |Precip| Precipitation in mm|
 |MaxTemp| Maximum temperature in degrees Celsius|
-|MinTemp| Minimum temperature in degrees Celsius
-|MeanTemp| Mean temperature in degrees Celsius
+|MinTemp| Minimum temperature in degrees Celsius|
+|MeanTemp| Mean temperature in degrees Celsius|
 |Snowfall| Snowfall and ice pellets in mm|
 |YR| Year of observation|
 |MO| Month of observation|
@@ -52,7 +52,7 @@ The second world war is known as the bloodiest conflict in human history. I have
 
 # Steps to Reproduce
 1) Clone this repository
-2) Ensure an .env file is in the repo
+2) Ensure an .csv file is in the repo
 3) Put the data in  the file containing the cloned repo
 4) Run notebook
 
@@ -62,5 +62,5 @@ The second world war is known as the bloodiest conflict in human history. I have
 * Feature gathering of temperature comparing where it is taken
 
 # Next Steps
-* Comparing weather from then to now would yield siginicant results
-* Features that include what type of environmnet the data was taken from such as arid, temperate or artic
+* Comparing weather from other places around the world would help
+* Features that include what type of environmnet the data was taken from such as arid, temperate or artic environmnet
