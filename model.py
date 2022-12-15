@@ -32,7 +32,8 @@ def model_prep(train, validate, test):
     keep_cols = ['Snowfall',
                  'YR',
                  'MO',
-                 'MeanTemp'
+                 'MeanTemp',
+                 'Precip'
                 ]
     
     train = train[keep_cols]
@@ -156,20 +157,29 @@ def polynomial(train_X, train_y, validate_X, validate_y, test_X):
 
 
 
-# lassolars model for test
-def lassolars_test(test_X, test_y):
+
+def polynomial_test(test_X, test_y):
+    # make the polynomial features to get a new set of features
+    pf = PolynomialFeatures(degree=2)
+
+    # fit and transform X_test
+    X_test_degree2 = pf.fit_transform(test_X)
+
+    # transform  X_test
+    X_test_degree2 =  pf.transform(test_X)
+    
     # create the model object
-    lars = LassoLars(alpha=1)
+    lm2 = LinearRegression(normalize=True)
 
     # fit the model to our training data. We must specify the column in y_train, 
-    # since we have converted it to a dataframe from a series!
-    lars.fit(test_X, test_y.MeanTemp)
+    # since we have converted it to a dataframe from a series! 
+    lm2.fit(X_test_degree2, test_y.MeanTemp)
 
-    # predict test
-    test_y['MeanTemp_pred_lars'] = lars.predict(test_X)
+    # predict train
+    test_y['MeanTemp_pred_lm2'] = lm2.predict(X_test_degree2)
 
     # evaluate: rmse
-    rmse_test = mean_squared_error(test_y.MeanTemp, test_y.MeanTemp_pred_lars) ** (1/2)
-
-    print("RMSE for Lasso + Lars\nTest/In-Sample: ", rmse_test)
+    rmse_test = mean_squared_error(test_y.MeanTemp, test_y.MeanTemp_pred_lm2) ** (1/2)
+    
+    print("RMSE for Polynomial Model, degrees=2\nTraining/In-Sample: ", rmse_test)
     return rmse_test
